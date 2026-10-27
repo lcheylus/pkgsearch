@@ -164,12 +164,10 @@ def query_index(index_path: str, needle: str, emoji_flag: bool):
                 # This should cover every package name currently in
                 # the OpenBSD repository
                 print(
-                    "{} {:<57} - Size: {:.2f}MB".format(
-                        PKG_EMOJI, pkg, size_mbytes
-                    )
+                    f"{PKG_EMOJI} {pkg:<57} - Size: {size_mbytes:.2f}MB"
                 )
             else:
-                print("{:<57} - Size: {:.2f}MB".format(pkg, size_mbytes))
+                print(f"{pkg:<57} - Size: {size_mbytes:.2f}MB")
 
     f.close()
 
@@ -225,9 +223,9 @@ def main():
         sys.exit(0)
 
     if args.snapshot:
-        index_path = '{0}/index-{1}-snapshots'.format(CACHE_DIR, args.arch)
+        index_path = f'{CACHE_DIR}/index-{args.arch}-snapshots'
     else:
-        index_path = '{0}/index-{1}-{2}'.format(CACHE_DIR, args.arch, args.release)
+        index_path = f'{CACHE_DIR}/index-{args.arch}-{args.release}'
 
     create_cache_dir()
 
