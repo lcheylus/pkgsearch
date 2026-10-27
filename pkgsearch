@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
-import re
-import os
 import argparse
-from packaging.version import InvalidVersion, parse
-import requests
+import os
+import re
 import sys
 import time
+
+import requests
+from packaging.version import InvalidVersion, parse
 
 PRG_NAME = "pkgsearch"
 PRG_VERSION = "1.0"
