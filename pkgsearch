@@ -54,12 +54,7 @@ def check_release(version: str):
     if m is None:
         return False
 
-    if (parse(version) > parse(CURRENT_RELEASE)) or (
-        parse(version) < parse('2.0')
-    ):
-        return False
-
-    return True
+    return not (parse(version) > parse(CURRENT_RELEASE) or parse(version) < parse('2.0'))
 
 
 def file_age_in_seconds(filename):
