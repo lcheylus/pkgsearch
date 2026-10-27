@@ -125,7 +125,7 @@ def get_index(snapshot: bool, version: str, arch: str, index_path: str, index_fl
                         if DEBUG:
                             print(f"[INFO] write index file {index_path}")
 
-                    except (IOError, OSError):
+                    except OSError:
                         print(f"[ERROR] Error writing to file {index_path}")
                         sys.exit(0)
 
